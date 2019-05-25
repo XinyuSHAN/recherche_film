@@ -46,7 +46,7 @@ class App extends React.Component {
     
     this.searchMovie(query);
   }
-  
+  /*
   getPopularMovies() {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=cfe422613b250f702980a3bbf9e90716`;
     
@@ -57,35 +57,47 @@ class App extends React.Component {
           movies: data.results
         })
       });
-  }
+  }*/
   
   searchMovie(query) {
-    const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=cfe422613b250f702980a3bbf9e90716`;
-    
+    //const url = `https://api.tvmaze.com/search/shows?q=${query}&api_key=cfe422613b250f702980a3bbf9e90716`;
+    const url = `https://api.tvmaze.com/search/shows?q=${query}`
     fetch (url)
       .then(response => response.json())
       .then(data => {
         this.setState({
-          movies: data.results
+          movies: data
         })
       });
   }
-  
+  /*
   componentDidMount() {
     this.getPopularMovies();
-  }
+  }*/
   
   render() {
     const { movies, query } = this.state;
-    const isSearched = query => item => !query || item.title.toLowerCase().includes(query.toLowerCase());
-    
+    const isSearched = query => item => !query || item.show.name.toLowerCase().includes(query.toLowerCase());
+   //const isSearched = query => item => !query || item.title.toLowerCase().includes(query.toLowerCase());
+   if(movies) {
     return (
       <div className="app">
-        <Search query={query} onInput={this.onInput} placeholder="Search for Movie Title …" />
+        <Search query={query} onInput={this.onInput} placeholder="Search" />
         <Movies movies={movies.filter(isSearched(query))} />
       </div>
     );
+   }else{
+      return(
+      <div className="app">
+          <Search query={query} onInput={this.onInput} placeholder="Search" />
+          
+        </div>
+      )
+  };
+    
   }
+
+  
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
