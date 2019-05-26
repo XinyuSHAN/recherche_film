@@ -7,8 +7,9 @@ import Movie from './Movie';
 const Movies = props => (
   <ul className="movies">
     {props.movies.map(movie => (
-      <li key={movie.id}>
-        <Movie {...movie} />
+      <li key={movie.show.id}>
+       
+       <Movie object = {movie} />
       </li>
       ))}
   </ul>
@@ -19,3 +20,5 @@ Movies.propTypes = {
 };
 
 export default Movies;
+
+// <Movie {...movie} />

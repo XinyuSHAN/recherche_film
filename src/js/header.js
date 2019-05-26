@@ -23,3 +23,5 @@ var createReactClass = require('create-react-class');
 })
 
 export default header;
+
+//<div class="site_title"><b>YOUR PRIVATE CINEMA</b></div>

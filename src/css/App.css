@@ -101,7 +101,6 @@ margin: 0 auto;
     background-color: #131b20;
     color: #fff;
     padding: 0.5em 2em;
-    text-align: center;
     width: 80%;
     height: 100%;
     border-radius: 15px;
@@ -158,4 +157,13 @@ border-radius: 15px;
 li:hover{
 color: black;
 box-shadow: 0 0 2em rgba(88, 100, 210);
+}
+.site_title{
+  height: auto;
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    font-weight: 900;
+    font-size: xx-large;
+        margin: 0 auto;
 }
