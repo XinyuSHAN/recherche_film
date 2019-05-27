@@ -1,5 +1,5 @@
 import React from 'react';
-
+import no_img from '../img/no_image.png';
 class Detail extends React.Component{
 	
  constructor(props, context) {
@@ -21,11 +21,16 @@ class Detail extends React.Component{
 	render(){
 	
 	if(this.props){
-		
+
 	 const params = this.props.location.state.params;
 	 const show = params.show;
 	 const summary = show.summary;
-	 	var img_src = params.show.image.original
+	 if(params.show.image){
+         var img_src = params.show.image.original
+        }else{
+          var img_src = no_img
+        }
+	 	
 		return(
 			<div>
 				<div className="detail_intro">
