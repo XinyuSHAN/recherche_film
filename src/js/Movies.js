@@ -20,5 +20,3 @@ Movies.propTypes = {
 };
 
 export default Movies;
-
-// <Movie {...movie} />

@@ -16,12 +16,6 @@ class Movie extends React.Component{
     clickHandle(event){
       var params=this.props.object;
       //new page of detail
-       // hashHistory.push('/detail' + encodeURIComponent(this.props.object))
-       //global.constants = this.props.object;
-       //window.props.history.push("/detail", {object: params});
-      //  console.log("here!!!"+global.constants.score);
-     //const w=window.open('about:blank');
-     // w.location.href=`/detail`;
    history.push({pathname: "/detail", target:"_blank", rel:"noopener noreferrer", state: {params}})
 
    
