@@ -21,7 +21,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Cherche un film 
+          Search a film 
         </a>
       </header>
     </div>
