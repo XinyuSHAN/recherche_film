@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js version
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '10.14'
 
     - name: npm install, build, and test
       run: |
@@ -27,9 +27,9 @@ jobs:
         npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v1
+      uses: azure/webapps-deploy@v2
       with:
         app-name: 'recherchefilm'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_83b4f175a77f432ab9c033dc2baf8851 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9dad67a1d9e548dca284565103e705c5 }}
         package: .
