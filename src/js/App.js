@@ -27,6 +27,7 @@ class App extends React.Component {
   searchMovie(query) {
     //const url = `https://api.tvmaze.com/search/shows?q=${query}&api_key=cfe422613b250f702980a3bbf9e90716`;
     const url = `https://api.tvmaze.com/search/shows?q=${query}`
+    console.log("Searching for"+query);
     fetch (url)
       .then(response => response.json())
       .then(data => {
